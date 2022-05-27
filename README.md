@@ -1,5 +1,5 @@
 # Nguyễn Ngọc Vỹ
-# **WEEK 1: Xử lý ảnh dùng openCV và python**
+# **WEEK 1: Xử lý ảnh dùng OpenCV và Python**
 # Mục lục:
 1. Nhiệm vụ:
     1. Đối tượng.

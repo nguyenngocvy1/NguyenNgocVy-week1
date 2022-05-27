@@ -33,7 +33,7 @@
 1. Đối tượng:
     - Ảnh chụp hạt nước có tương phản cao đã được tiền xử lý.
     <div align='center'>
-    <img src="week1.png" width='90%'>
+    <img src="img\week1.png" width='90%'>
     </div>
 2. Yêu cầu:
     - Tìm ra được số lượng hạt trong ảnh.
@@ -53,7 +53,7 @@
 ## **II. Các bước tiếp cận:**
 1. Sơ đồ.
     <div align='center'>
-    <img src="step.png" width='90%'>
+    <img src="img\step.png" width='90%'>
     </div>
 2. Chú thích:
     - Task 1: (Object => Canny Edge detection => ...)
@@ -126,11 +126,11 @@
     - **Chú thích:** *thông thường giá trị max_val = 2 min_val, do ảnh đã qua xử lý rất chính xác nên chọn mức min_val thấp nhất để không bỏ sót bất kì giọt li ti nào.*
     - Ta thu được ảnh:
     <div align='center'>
-    <img src="edges.png" width='90%'>
+    <img src="img\edges.png" width='90%'>
     </div>
     - Zoom ảnh lên:
     <div align='center'>
-    <img src="zoomEdges.png" width='90%'>
+    <img src="img\zoomEdges.png" width='90%'>
     </div>
 5. Tìm viền của hạt nước để tính toán:
     - Sử dụng hàm cv2.findContours() để tìm viền của đối tượng
@@ -156,23 +156,23 @@
     - Có 5 kiểu vẽ đường bao:
         - Contours (bao theo đường viền của hạt)
             <div align='center'>
-            <img src="contours.png" width='90%'>
+            <img src="img\contours.png" width='90%'>
             </div>
         - Normal Rectangle (bao hình chữ nhật đứng bọc toàn bộ hạt) (Bao hình chữ nhật màu xanh)
             <div align='center'>
-            <img src="boundingrect.png" width='90%'>
+            <img src="img\boundingrect.png" width='90%'>
             </div>
         -  Rotated Rectangle (bao hình chữ nhật bọc toàn bộ hạt có diện tích nhỏ nhất)(Bao hình chữ nhật màu đỏ)
             <div align='center'>
-            <img src="boundingrect.png" width='90%'>
+            <img src="img\boundingrect.png" width='90%'>
             </div>
         - Minimum Enclosing Circle (bao hình tròn có đường kính là 2 điểm xa nhất trên hạt)
             <div align='center'>
-            <img src="circumcircle.png" width='90%'>
+            <img src="img\circumcircle.png" width='90%'>
             </div>
         - Fitting an Ellipse (bao hình ellipse tương đối vừa với hạt)
             <div align='center'>
-            <img src="fitellipse.png" width='90%'>
+            <img src="img\fitellipse.png" width='90%'>
             </div>
     - Bao kiểu Rotated Rectangle là tối ưu nhất vì:
         - Trông gần giống nhất với hình dạng hạt nước.
@@ -210,15 +210,15 @@
     ```
     - Ảnh thu được sau khi lưu:
     <div align='center'>
-    <img src="week1Task1result.png" width='90%'>
+    <img src="img\week1Task1result.png" width='90%'>
     </div>
     - Zoom ảnh lên, ta thấy:
     <div align='center'>
-    <img src="zoomTask1result.png" width='90%'>
+    <img src="img\zoomTask1result.png" width='90%'>
     </div>
         - Đối với các hạt nhỏ và các hạt phía xa thì tương đối chính xác và hiệu quả.
     <div align='center'>
-    <img src="zoomTask1resultNear.png" width='90%'>
+    <img src="img\zoomTask1resultNear.png" width='90%'>
     </div>
         - Đối với các hạt gần tâm thì còn nhiều sai sót: Nhiều hạt bị chồng chéo, bị dính với nhau trên ảnh chụp thì vẫn bị tính là một vật thể.
     - **Kết quả:** *Còn nhiều sai số, không xác định được chính xác số hạt bắn ra.*
@@ -324,7 +324,7 @@
     plt.show()
     ```
     <div align='center'>
-    <img src="Diagram.png" width='90%'>
+    <img src="img\Diagram.png" width='90%'>
     </div>
     - Nhận xét: Từ đồ thị của vùng xa tâm, ta thấy các hạt phân bố tập trung ở kích thước từ 0 đến 150 micron. Phân bố nhiều nhất ở kích thước từ 20 đến dưới 30 micron. Kế đến là các vùng từ 0 đến dưới 10 micron và từ 40 đến dưới 50 micron.
 9. Kiểm nghiệm tính chính xác của số liệu:
@@ -343,11 +343,11 @@
     ```
     - Ảnh thu được sau khi lưu:
     <div align='center'>
-    <img src="week1Task2result.png" width='90%'>
+    <img src="img\week1Task2result.png" width='90%'>
     </div>
     - Zoom ảnh lên, ta thấy:
     <div align='center'>
-    <img src="zoomTask2result.png" width='90%'>
+    <img src="img\zoomTask2result.png" width='90%'>
     </div>
     - Nhận xét: hạt nước nằm trên đường tròn ROI bị chia đôi kích thước, nếu chiều dài sau khi bị chia đôi < chiều rộng thì sẽ xảy ra sai số. Nhưng nhìn chung sai số là khá nhỏ và không đáng kể so với phần ta xét.
 ## **V. Tài liệu tham khảo:**
